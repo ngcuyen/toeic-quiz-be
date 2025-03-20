@@ -94,7 +94,7 @@ export const env = {
   },
   database: {
     main: {
-      url: `mongodb+srv://${envVars.DATABASE_HUTECH_BUG}:${envVars.PASSWORD_HUTECH_BUG}@bug-management.2kbota8.mongodb.net/?retryWrites=true&w=majority&appName=bug-management`,
+      url: `mongodb+srv://${envVars.DATABASE_HUTECH_BUG}:${envVars.PASSWORD_HUTECH_BUG}@toeicquiz.dr1un.mongodb.net/?retryWrites=true&w=majority&appName=bug-management`,
       name: envVars.DB_NAME,
       collection: {
         users: envVars.DB_USER_COLLECTION,

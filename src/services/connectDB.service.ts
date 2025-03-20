@@ -1,12 +1,8 @@
 import { Db, MongoClient, ServerApiVersion, Collection } from 'mongodb'
 import { env } from '~/config/environment.config'
 import { MESSAGES } from '~/constants/message'
-import Blog from '~/models/schemas/Blogs.schema'
-import Bookmark from '~/models/schemas/Bookmarks.schema'
-import Bug from '~/models/schemas/Bugs.schema'
 import OTP from '~/models/schemas/Otps.schema'
 import RefreshToken from '~/models/schemas/RefreshToken.schema'
-import Solution from '~/models/schemas/Solutions.schema'
 import User from '~/models/schemas/Users.schema'
 
 class DatabaseServices {
@@ -50,24 +46,8 @@ class DatabaseServices {
     return this.db.collection(env.database.main.collection.otps as string)
   }
 
-  get blogs(): Collection<Blog> {
-    return this.db.collection(env.database.main.collection.blogs as string)
-  }
-
-  get bookmarks(): Collection<Bookmark> {
-    return this.db.collection(env.database.main.collection.bookmarks as string)
-  }
-
   get comments(): Collection<Comment> {
     return this.db.collection(env.database.main.collection.comments as string)
-  }
-
-  get bugs(): Collection<Bug> {
-    return this.db.collection(env.database.main.collection.bugs as string)
-  }
-
-  get solutions(): Collection<Solution> {
-    return this.db.collection(env.database.main.collection.solutions as string)
   }
 }
 
