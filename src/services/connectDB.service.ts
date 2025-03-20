@@ -45,10 +45,6 @@ class DatabaseServices {
   get otps(): Collection<OTP> {
     return this.db.collection(env.database.main.collection.otps as string)
   }
-
-  get comments(): Collection<Comment> {
-    return this.db.collection(env.database.main.collection.comments as string)
-  }
 }
 
 export const databaseService = new DatabaseServices()

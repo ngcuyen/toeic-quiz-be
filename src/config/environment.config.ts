@@ -94,19 +94,12 @@ export const env = {
   },
   database: {
     main: {
-      url: `mongodb+srv://${envVars.DATABASE_HUTECH_BUG}:${envVars.PASSWORD_HUTECH_BUG}@toeicquiz.dr1un.mongodb.net/?retryWrites=true&w=majority&appName=bug-management`,
+      url: `mongodb+srv://${envVars.DATABASE}:${envVars.PASSWORD}@toeicquiz.dr1un.mongodb.net/?retryWrites=true&w=majority&appName=toeicquiz`,
       name: envVars.DB_NAME,
       collection: {
         users: envVars.DB_USER_COLLECTION,
         refresh_tokens: envVars.DB_REFRESH_TOKEN_COLLECTION,
-        otps: envVars.DB_OTP_COLLECTION,
-        likes: envVars.DB_LIKES_COLLECTION,
-        blogs: envVars.DB_BLOGS_COLLECTION,
-        tags: envVars.DB_TAGS_COLLECTION,
-        comments: envVars.DB_COMMENT_COLLECTION,
-        bookmarks: envVars.DB_BOOKMARKS_COLLECTION,
-        bugs: envVars.DB_BUGS_COLLECTION,
-        solutions: envVars.DB_SOLUTIONS_COLLECTION
+        otps: envVars.DB_OTP_COLLECTION
       }
     }
   },
