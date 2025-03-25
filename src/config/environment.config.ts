@@ -20,16 +20,9 @@ const envSchema = Joi.object({
   DB_USER_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.USERS),
   DB_REFRESH_TOKEN_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.REFRESH_TOKENS),
   DB_OTP_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.OTP),
-  DB_LIKES_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.LIKES),
-  DB_BLOGS_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.BLOGS),
-  DB_TAGS_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.TAGS),
-  DB_COMMENT_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.COMMENTS),
-  DB_BOOKMARKS_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.BOOKMARKS),
-  DB_BUGS_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.BUGS),
-  DB_SOLUTIONS_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.SOLUTIONS),
 
-  DATABASE_HUTECH_BUG: Joi.string().required().description(DATABASE.USERNAME),
-  PASSWORD_HUTECH_BUG: Joi.string().required().description(DATABASE.PASSWORD),
+  DATABASE: Joi.string().required().description(DATABASE.USERNAME),
+  PASSWORD: Joi.string().required().description(DATABASE.PASSWORD),
 
   RATE_POINT: Joi.number().required().description(POINT),
   RATE_DURATION: Joi.number().required().description(DURATION),
@@ -50,9 +43,6 @@ const envSchema = Joi.object({
   CLOUDINARY_KEY: Joi.string().required().description(CLOUDINARY.KEY),
   CLOUDINARY_SECRET: Joi.string().required().description(CLOUDINARY.SECRET),
   CLOUDINARY_NAME: Joi.string().required().description(CLOUDINARY.NAME),
-  CLOUDINARY_AVATAR_FOLDER: Joi.string().required().description(CLOUDINARY.AVATAR_FOLDER),
-  CLOUDINARY_BUGS_FOLDER: Joi.string().required().description(CLOUDINARY.BUGS_FOLDER),
-  CLOUDINARY_SOLUTIONS_FOLDER: Joi.string().required().description(CLOUDINARY.SOLUTIONS_FOLDER),
 
   HASH_SALT_ROUNDS: Joi.number().required(),
 
@@ -99,7 +89,8 @@ export const env = {
       collection: {
         users: envVars.DB_USER_COLLECTION,
         refresh_tokens: envVars.DB_REFRESH_TOKEN_COLLECTION,
-        otps: envVars.DB_OTP_COLLECTION
+        otps: envVars.DB_OTP_COLLECTION,
+        questions: envVars.DB_QUESTION_COLLECTION
       }
     }
   },
