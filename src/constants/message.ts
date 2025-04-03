@@ -13,7 +13,8 @@ export const MESSAGES = {
       PARAGRAPH: 'Holds paragraphs.',
       BLANK: 'Holds blanks.',
       EXAM: 'Holds exams.',
-      EXAM_QUESTION: 'Holds examQuestions.'
+      EXAM_QUESTION: 'Holds examQuestions.',
+      QUIZ_SESSION: 'Holds quizSessions.'
     }
   },
   AUTH: {
@@ -123,6 +124,14 @@ export const MESSAGES = {
       DELETE: 'Delete blank failed',
       NOT_FOUND: 'Not found blank document'
     },
+    SESSION: {
+      GET_ALL: 'Get all sessions failed',
+      GET_BY_ID: 'Get session by id failed',
+      CREATE: 'Create session failed',
+      UPDATE: 'Update session failed',
+      DELETE: 'Delete session failed',
+      NOT_FOUND: 'Not found session document'
+    },
     EXAM: {
       GET_ALL: 'Get all exams failed',
       GET_BY_ID: 'Get exam by id failed',
@@ -228,6 +237,14 @@ export const MESSAGES = {
       UPDATE: 'Update question successfully',
       CREATE: 'Create question successfully',
       DELETE: 'Delete question successfully'
+    },
+    SESSION: {
+      GET_ALL: 'Get all sessions successfully',
+      GET_BY_ID: 'Get session by id successfully',
+      UPDATE: 'Update session successfully',
+      CREATE: 'Create session successfully',
+      DELETE: 'Delete session successfully',
+      SUBMIT_TEST: 'Submit test successfully'
     },
 
     IMAGE: {

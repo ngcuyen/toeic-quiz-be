@@ -8,6 +8,7 @@ import Exam from '~/models/schemas/Exams.schema'
 import OTP from '~/models/schemas/Otps.schema'
 import Paragraph from '~/models/schemas/Paragraphs.schema'
 import Question from '~/models/schemas/Questions.schema'
+import QuizSession from '~/models/schemas/QuizSessions.schema'
 import RefreshToken from '~/models/schemas/RefreshToken.schema'
 import User from '~/models/schemas/Users.schema'
 
@@ -68,6 +69,9 @@ class DatabaseServices {
   }
   get examQuestions(): Collection<ExamQuestion> {
     return this.db.collection(env.database.main.collection.examQuestions as string)
+  }
+  get quizSessions(): Collection<QuizSession> {
+    return this.db.collection(env.database.main.collection.quizSessions as string)
   }
 }
 
