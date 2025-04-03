@@ -8,13 +8,10 @@ export const MESSAGES = {
       USERS: 'Holds user information.',
       REFRESH_TOKENS: 'Holds refresh-token information.',
       OTP: 'Holds OTP data.',
-      LIKES: 'Holds user likes.',
-      BLOGS: 'Holds blogs.',
-      TAGS: 'Holds tags.',
-      COMMENTS: 'Holds comments.',
-      BOOKMARKS: 'Holds bookmarks',
-      BUGS: 'Hold bugs',
-      SOLUTIONS: 'Hold solutions'
+      QUESTION: 'Holds questions.',
+      CATEGORY: 'Holds categories.',
+      PARAGRAPH: 'Holds paragraphs.',
+      BLANK: 'Holds blanks.'
     }
   },
   AUTH: {
@@ -100,22 +97,37 @@ export const MESSAGES = {
       PASSWORD_INCORRECT: 'Incorrect password.',
       ACCOUNT_LOCKED: 'Account is locked or banned.'
     },
-    BUG: {
-      GET_ALL: 'Get all bugs failed',
-      GET_BY_ID: 'Get bug by id failed',
-      CREATE: 'Create bug failed',
-      UPDATE: 'Update bug failed',
-      DELETE: 'Delete bug failed',
-      NOT_FOUND: 'Not found bug document'
+    QUESTION: {
+      GET_ALL: 'Get all questions failed',
+      GET_BY_ID: 'Get question by id failed',
+      CREATE: 'Create question failed',
+      UPDATE: 'Update question failed',
+      DELETE: 'Delete question failed',
+      NOT_FOUND: 'Not found question document'
     },
-    SOLUTION: {
-      GET_ALL: 'Get all solutions failed',
-      GET_BY_ID: 'Get solution by id failed',
-      CREATE: 'Create solution failed',
-      UPDATE: 'Update solution failed',
-      DELETE: 'Delete solution failed',
-      BUG_ID_NOTFOUND: 'Bug ID not found',
-      NOT_FOUND: 'Not found solution document'
+    CATEGORY: {
+      GET_ALL: 'Get all categories failed',
+      GET_BY_ID: 'Get category by id failed',
+      CREATE: 'Create category failed',
+      UPDATE: 'Update category failed',
+      DELETE: 'Delete category failed',
+      NOT_FOUND: 'Not found category document'
+    },
+    BLANK: {
+      GET_ALL: 'Get all blanks failed',
+      GET_BY_ID: 'Get blank by id failed',
+      CREATE: 'Create blank failed',
+      UPDATE: 'Update blank failed',
+      DELETE: 'Delete blank failed',
+      NOT_FOUND: 'Not found blank document'
+    },
+    PARAGRAPH: {
+      GET_ALL: 'Get all paragraphs failed',
+      GET_BY_ID: 'Get paragraph by id failed',
+      CREATE: 'Create paragraph failed',
+      UPDATE: 'Update paragraph failed',
+      DELETE: 'Delete paragraph failed',
+      NOT_FOUND: 'Not found paragraph document'
     },
     UPLOAD: {
       IMAGE: 'Upload image failed',
@@ -171,13 +183,27 @@ export const MESSAGES = {
       UPLOAD_IMAGE: 'Image uploaded successfully.',
       UPLOAD_MUL_IMAGE: 'Multiple images were uploaded successfully.'
     },
+    CATEGORY: {
+      GET_ALL: 'Get all categories successfully',
+      GET_BY_ID: 'Get category by id successfully',
+      UPDATE: 'Update category successfully',
+      CREATE: 'Create category successfully',
+      DELETE: 'Delete category successfully'
+    },
+    PARAGRAPH: {
+      GET_ALL: 'Get all paragraphs successfully',
+      GET_BY_ID: 'Get paragraph by id successfully',
+      UPDATE: 'Update paragraph successfully',
+      CREATE: 'Create paragraph successfully',
+      DELETE: 'Delete paragraph successfully'
+    },
 
-    BUG: {
-      GET_ALL: 'Get all bugs successfully',
-      GET_BY_ID: 'Get bug by id successfully',
-      UPDATE: 'Update bug successfully',
-      CREATE: 'Create bug successfully',
-      DELETE: 'Delete bug successfully'
+    QUESTION: {
+      GET_ALL: 'Get all questions successfully',
+      GET_BY_ID: 'Get question by id successfully',
+      UPDATE: 'Update question successfully',
+      CREATE: 'Create question successfully',
+      DELETE: 'Delete question successfully'
     },
     SOLUTION: {
       GET_ALL: 'Get all solutions successfully',
@@ -247,13 +273,33 @@ export const MESSAGES = {
     ID_INVALID: 'Id is unvalid',
     ID_IS_REQUIRED: 'Id is required',
     ID_MUST_BE_STRING: 'Id must be string',
-    INVENTORY: {
-      AMOUNT_IS_INVALID: 'The amount must be greater than or equal to 1.',
-      INVALID_ID: 'The inventory ID is invalid.',
-      NOT_FOUND: 'Inventory not found.',
-      INVALID_PRODUCT_SIZE: 'The specified size does not exist for this product.',
-      ALREADY_EXISTS: 'An inventory item for this product and size already exists.',
-      ID_IS_REQUIRED: 'An inventory ID is required.'
+    CATEGORIES: {
+      NAME: {
+        IS_REQUIRED: 'Category name is required.',
+        MUST_BE_STRING: 'Category name must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_100: 'Category name length must be between 3 and 100 characters.'
+      }
+    },
+    PARAGRAPH: {
+      NAME: {
+        IS_REQUIRED: 'Paragraph name is required.',
+        MUST_BE_STRING: 'Paragraph name must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_100: 'Paragraph name length must be between 3 and 100 characters.'
+      }
+    },
+    BLANK: {
+      BLANK_POSITION: {
+        IS_REQUIRED: 'Blank position is required.',
+        MUST_BE_INTEGER: 'Blank position must be integer.',
+        LENGTH_MUST_BE_FROM_3_TO_100: 'Blank position length must be between 3 and 100 characters.'
+      },
+      PARAGRAPH_ID: {
+        IS_REQUIRED: 'Paragraph ID is required.'
+      },
+      CORRECT_ANSWER: {
+        IS_REQUIRED: 'Correct answer is required.',
+        MUST_BE_STRING: 'Correct answer must be a string.'
+      }
     },
     TAGS: {
       ID_IS_REQUIRED: 'Tag ID is required.',
@@ -270,7 +316,8 @@ export const MESSAGES = {
       FIELD_UPDATE_IS_REQUIRED: 'At least one field must be specified for updating.'
     },
 
-    BUGS: {
+    QUESTIONS: {
+      MUST_BE_A_VALID_ID: 'Question ID must be a valid ID.',
       TITLE_IS_REQUIRED: 'Title is required',
       TITLE_MUST_BE_STRING: 'Title must be a string',
       TITLE_LENGTH_BETWEEN_10_AND_100: 'Title length is from 10 to 100 characters',
@@ -282,7 +329,33 @@ export const MESSAGES = {
       INVALID_IMAGE: 'Invalid image',
       UPDATE_ID_IS_REQUIRED: 'Bug id is required',
       UPDATE_ID_MUST_BE_STRING: 'Bug id must be string',
-      STATUS: 'Status is Pending or Public or Deleted'
+      STATUS: 'Status is Pending or Public or Deleted',
+      QUESTION_TEXT: {
+        MUST_BE_A_STRING: 'Question text must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_1000: 'Question text length must be between 3 and 1000 characters.'
+      },
+      PARAGRAPH_ID: {
+        MUST_BE_A_STRING: 'Paragraph ID must be a string.',
+        MUST_BE_VALID_OBJECT_ID: 'Paragraph ID must be a valid object ID.'
+      },
+      CATEGORY_ID: {
+        MUST_BE_A_STRING: 'Category ID must be a string.',
+        MUST_BE_VALID_OBJECT_ID: 'Category ID must be a valid object ID.'
+      },
+      IMAGE: {
+        MUST_BE_A_STRING: 'Image URL must be a string.',
+        MUST_BE_VALID_URL: 'Image URL must be a valid URL.'
+      },
+      OPTION: {
+        IS_REQUIRED: 'Option is required.',
+        MUST_BE_A_STRING: 'Option must be a string.',
+        LENGTH_MUST_BE_FROM_1_TO_200: 'Option length must be between 1 and 200 characters.'
+      },
+      ANSWER: {
+        IS_REQUIRED: 'Option is required.',
+        MUST_BE_A_STRING: 'Option must be a string.',
+        LENGTH_MUST_BE_FROM_1_TO_200: 'Option length must be between 1 and 200 characters.'
+      }
     },
 
     UPLOAD: {

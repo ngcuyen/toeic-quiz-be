@@ -10,8 +10,6 @@ import { rateLimiterMiddleware } from './middlewares/rateLimiter.middleware'
 import { databaseService } from './services/connectDB.service'
 import { defaultErrorHandler } from './middlewares/errors.middleware'
 import exitHook from 'async-exit-hook'
-import swaggerJSDoc from 'swagger-jsdoc'
-import swaggerUi from 'swagger-ui-express'
 import { MESSAGES } from './constants/message'
 import passport from 'passport'
 import authServices from './services/auth.service'
@@ -19,7 +17,12 @@ import authServices from './services/auth.service'
 const app = express()
 
 app.use(compression())
-app.use(cors())
+app.use(
+  cors({
+    origin: 'http://localhost:5173', // Cho phép frontend truy cập
+    credentials: true // Quan trọng: Cho phép gửi cookies/token
+  })
+)
 app.use(morgan('dev'))
 app.disable('x-powered-by')
 app.use(express.json())
