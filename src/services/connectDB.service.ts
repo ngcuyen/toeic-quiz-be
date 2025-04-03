@@ -3,6 +3,7 @@ import { env } from '~/config/environment.config'
 import { MESSAGES } from '~/constants/message'
 import Blank from '~/models/schemas/Blanks.schema'
 import Category from '~/models/schemas/Categories.schema'
+import ExamQuestion from '~/models/schemas/ExamQuestions.schema'
 import Exam from '~/models/schemas/Exams.schema'
 import OTP from '~/models/schemas/Otps.schema'
 import Paragraph from '~/models/schemas/Paragraphs.schema'
@@ -64,6 +65,9 @@ class DatabaseServices {
   }
   get exams(): Collection<Exam> {
     return this.db.collection(env.database.main.collection.exams as string)
+  }
+  get examQuestions(): Collection<ExamQuestion> {
+    return this.db.collection(env.database.main.collection.examQuestions as string)
   }
 }
 

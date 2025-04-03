@@ -9,7 +9,6 @@ const examController = {
   create: async (req: Request<ParamsDictionary, any, any>, res: Response) => {
     const userId = req.user?._id
     const payload = { ...req.body, user_id: userId }
-    console.log('🚀 ~ create: ~ payload:', payload)
     const result = await examService.create(payload)
     return sendResponse.created(res, result, MESSAGES.SUCCESS_MESSAGES.EXAM.CREATE)
   },

@@ -12,7 +12,8 @@ export const MESSAGES = {
       CATEGORY: 'Holds categories.',
       PARAGRAPH: 'Holds paragraphs.',
       BLANK: 'Holds blanks.',
-      EXAM: 'Holds exams.'
+      EXAM: 'Holds exams.',
+      EXAM_QUESTION: 'Holds examQuestions.'
     }
   },
   AUTH: {
@@ -213,6 +214,13 @@ export const MESSAGES = {
       CREATE: 'Create exam successfully',
       DELETE: 'Delete exam successfully'
     },
+    EXAM_QUESTION: {
+      GET_ALL: 'Get all exam questions successfully',
+      GET_BY_ID: 'Get exam question by id successfully',
+      UPDATE: 'Update exam question successfully',
+      CREATE: 'Create exam question successfully',
+      DELETE: 'Delete exam question successfully'
+    },
 
     QUESTION: {
       GET_ALL: 'Get all questions successfully',
@@ -260,6 +268,18 @@ export const MESSAGES = {
         IS_REQUIRED: 'Exam description is required.',
         MUST_BE_STRING: 'Exam description must be a string.',
         LENGTH_MUST_BE_FROM_3_TO_200: 'Exam description length must be between 3 and 200 characters.'
+      }
+    },
+    EXAM_QUESTION: {
+      EXAM_ID: {
+        IS_REQUIRED: 'Exam ID is required.',
+        MUST_BE_STRING: 'Exam ID must be a string.',
+        VALID_ID: 'Exam ID must be a valid ID.'
+      },
+      QUESTION_ID: {
+        IS_REQUIRED: 'Question ID is required.',
+        MUST_BE_STRING: 'Question ID must be a string.',
+        VALID_ID: 'Question ID must be a valid ID.'
       }
     },
     PARAGRAPH: {
