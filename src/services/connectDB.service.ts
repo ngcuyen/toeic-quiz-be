@@ -2,6 +2,7 @@ import { Db, MongoClient, ServerApiVersion, Collection } from 'mongodb'
 import { env } from '~/config/environment.config'
 import { MESSAGES } from '~/constants/message'
 import OTP from '~/models/schemas/Otps.schema'
+import Question from '~/models/schemas/Questions.schema'
 import RefreshToken from '~/models/schemas/RefreshToken.schema'
 import User from '~/models/schemas/Users.schema'
 
@@ -44,6 +45,9 @@ class DatabaseServices {
 
   get otps(): Collection<OTP> {
     return this.db.collection(env.database.main.collection.otps as string)
+  }
+  get questions(): Collection<Question> {
+    return this.db.collection(env.database.main.collection.questions as string)
   }
 }
 

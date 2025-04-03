@@ -100,13 +100,13 @@ export const MESSAGES = {
       PASSWORD_INCORRECT: 'Incorrect password.',
       ACCOUNT_LOCKED: 'Account is locked or banned.'
     },
-    BUG: {
-      GET_ALL: 'Get all bugs failed',
-      GET_BY_ID: 'Get bug by id failed',
-      CREATE: 'Create bug failed',
-      UPDATE: 'Update bug failed',
-      DELETE: 'Delete bug failed',
-      NOT_FOUND: 'Not found bug document'
+    QUESTION: {
+      GET_ALL: 'Get all questions failed',
+      GET_BY_ID: 'Get question by id failed',
+      CREATE: 'Create question failed',
+      UPDATE: 'Update question failed',
+      DELETE: 'Delete question failed',
+      NOT_FOUND: 'Not found question document'
     },
     SOLUTION: {
       GET_ALL: 'Get all solutions failed',
@@ -172,12 +172,12 @@ export const MESSAGES = {
       UPLOAD_MUL_IMAGE: 'Multiple images were uploaded successfully.'
     },
 
-    BUG: {
-      GET_ALL: 'Get all bugs successfully',
-      GET_BY_ID: 'Get bug by id successfully',
-      UPDATE: 'Update bug successfully',
-      CREATE: 'Create bug successfully',
-      DELETE: 'Delete bug successfully'
+    QUESTION: {
+      GET_ALL: 'Get all questions successfully',
+      GET_BY_ID: 'Get question by id successfully',
+      UPDATE: 'Update question successfully',
+      CREATE: 'Create question successfully',
+      DELETE: 'Delete question successfully'
     },
     SOLUTION: {
       GET_ALL: 'Get all solutions successfully',
@@ -270,7 +270,8 @@ export const MESSAGES = {
       FIELD_UPDATE_IS_REQUIRED: 'At least one field must be specified for updating.'
     },
 
-    BUGS: {
+    QUESTIONS: {
+      MUST_BE_A_VALID_ID: 'Question ID must be a valid ID.',
       TITLE_IS_REQUIRED: 'Title is required',
       TITLE_MUST_BE_STRING: 'Title must be a string',
       TITLE_LENGTH_BETWEEN_10_AND_100: 'Title length is from 10 to 100 characters',
@@ -282,7 +283,33 @@ export const MESSAGES = {
       INVALID_IMAGE: 'Invalid image',
       UPDATE_ID_IS_REQUIRED: 'Bug id is required',
       UPDATE_ID_MUST_BE_STRING: 'Bug id must be string',
-      STATUS: 'Status is Pending or Public or Deleted'
+      STATUS: 'Status is Pending or Public or Deleted',
+      QUESTION_TEXT: {
+        MUST_BE_A_STRING: 'Question text must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_1000: 'Question text length must be between 3 and 1000 characters.'
+      },
+      PARAGRAPH_ID: {
+        MUST_BE_A_STRING: 'Paragraph ID must be a string.',
+        MUST_BE_VALID_OBJECT_ID: 'Paragraph ID must be a valid object ID.'
+      },
+      CATEGORY_ID: {
+        MUST_BE_A_STRING: 'Category ID must be a string.',
+        MUST_BE_VALID_OBJECT_ID: 'Category ID must be a valid object ID.'
+      },
+      IMAGE: {
+        MUST_BE_A_STRING: 'Image URL must be a string.',
+        MUST_BE_VALID_URL: 'Image URL must be a valid URL.'
+      },
+      OPTION: {
+        IS_REQUIRED: 'Option is required.',
+        MUST_BE_A_STRING: 'Option must be a string.',
+        LENGTH_MUST_BE_FROM_1_TO_200: 'Option length must be between 1 and 200 characters.'
+      },
+      ANSWER: {
+        IS_REQUIRED: 'Option is required.',
+        MUST_BE_A_STRING: 'Option must be a string.',
+        LENGTH_MUST_BE_FROM_1_TO_200: 'Option length must be between 1 and 200 characters.'
+      }
     },
 
     UPLOAD: {

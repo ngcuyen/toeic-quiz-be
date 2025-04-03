@@ -1,22 +1,25 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response, NextFunction, RequestHandler } from 'express'
 import { validationResult, ValidationChain } from 'express-validator'
-import { RunnableValidationChains } from 'express-validator/src/middlewares/schema'
 import { StatusCodes } from 'http-status-codes'
 import { ObjectId } from 'mongodb'
 import { ErrorEnity, ErrorWithStatus } from '~/models/errors/Errors.schema'
 
-const validate = (validations: RunnableValidationChains<ValidationChain>) => {
+export const validate = (validations: ValidationChain[]): RequestHandler => {
   return async (req: Request, res: Response, next: NextFunction) => {
     // Truyền req vào để tiến hành validate dữ liệu
-    await validations.run(req)
+    await Promise.all(validations.map((validation) => validation.run(req)))
+
     // Đưa lỗi vào biến req -> gọi validation result để nhận lỗi
     const errors = validationResult(req)
+
     // Không có lỗi thì next tiếp tục request
     if (errors.isEmpty()) {
       return next()
     }
+
     const errorObject = errors.mapped()
     const entityError = new ErrorEnity({ errors: {} })
+
     for (const key in errorObject) {
       const { msg } = errorObject[key]
       if (Object.prototype.hasOwnProperty.call(errorObject, key)) {
@@ -27,6 +30,7 @@ const validate = (validations: RunnableValidationChains<ValidationChain>) => {
       }
       entityError.errors[key] = errorObject[key]
     }
+
     // Lỗi do validation thông thường
     next(entityError)
   }
