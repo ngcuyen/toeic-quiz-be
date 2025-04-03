@@ -24,6 +24,9 @@ const envSchema = Joi.object({
   DB_CATEGORY_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.CATEGORY),
   DB_PARAGRAPH_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.PARAGRAPH),
   DB_BLANK_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.BLANK),
+  DB_EXAM_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.EXAM),
+  DB_EXAM_QUESTION_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.EXAM_QUESTION),
+  DB_QUIZ_SESSION_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.EXAM_QUESTION),
 
   DATABASE: Joi.string().required().description(DATABASE.USERNAME),
   PASSWORD: Joi.string().required().description(DATABASE.PASSWORD),
@@ -97,7 +100,10 @@ export const env = {
         questions: envVars.DB_QUESTION_COLLECTION,
         categories: envVars.DB_CATEGORY_COLLECTION,
         paragraphs: envVars.DB_PARAGRAPH_COLLECTION,
-        blanks: envVars.DB_BLANK_COLLECTION
+        blanks: envVars.DB_BLANK_COLLECTION,
+        exams: envVars.DB_EXAM_COLLECTION,
+        examQuestions: envVars.DB_EXAM_QUESTION_COLLECTION,
+        quizSessions: envVars.DB_QUIZ_SESSION_COLLECTION
       }
     }
   },

@@ -1,23 +1,32 @@
-# HUTECH Bug 🐛
+# 🎓 TOEIC Quiz Platform Documentation 🎓
 
-## Overview 📄
+## Introduction 📄
 
-Welcome to the HUTECH Bug project! 🎉 The "HUTECH Bug" is an interactive platform designed to help students at HUTECH University troubleshoot and resolve common programming errors encountered during their practical exercises. Students can quickly look up errors by keywords or error messages, contribute their solutions, vote on the effectiveness of existing solutions, and discuss issues with peers to enhance understanding and collaborative learning.
+The **TOEIC Quiz Platform** is a modern web application designed to help users prepare for the TOEIC exam. This platform offers interactive quiz features, personalized question sets, and progress tracking to ensure an engaging and productive learning experience.
 
 ## Features 🚀
 
-- **Error Lookup** 🔍: Quickly find fixes to common errors by searching with error messages or keywords.
-- **Solution Voting** 🗳️: Vote on solutions that work best to ensure the highest quality fixes are most visible.
-- **Contribute Solutions** ✍️: Add new solutions and share your knowledge with other students.
+### 🔐 Authentication
 
-## Technologies 💻
+- Secure login and registration system.
+- Password encryption for user security.
+- Integration with social login options (e.g., Google, Facebook, Twitter).
 
-- **Back-End:** Node.js, TypeScript, and MongoDB for API development and data management.
-- **Authentication:** Implement secure login and user authentication with JWT (JsonWebToken).
+### 📚 Quiz System
+
+- Dynamic Question Generation: Ensures each quiz attempt is unique.
+- Feedback: Immediate feedback on submitted answers.
+- Time Tracking: Keeps track of quiz completion times for performance analysis.
+
+### 📊 Progress Tracking
+
+- Historical data for each quiz attempt.
+- Statistical insights on strengths and weaknesses.
 
 ## Prerequisites 📋
 
 Before you can run the HUTECH Bug, you need to have the following installed:
+
 - Node.js
 - MongoDB
 - Yarn
@@ -27,21 +36,19 @@ Before you can run the HUTECH Bug, you need to have the following installed:
 Follow these steps to get your development environment running:
 
 1. **Clone the repository:**
+
    ```bash
-   git clone https://github.com/Newbies-Coder/hutech-bug-api.git
-   cd hutech-bug-api
+   git clone https://github.com/ngcuyen/toeic-quiz-be.git
+   cd toeic-quiz-be
    ```
 
 2. **Install the dependencies:**
+
    ```bash
    yarn install
    ```
 
-3. **Create a `.env` file in the root directory and add your MongoDB URI and other environment variables:**
-   ```env
-   MONGODB_URI=mongodb://localhost:27017/bug-management
-   JWT_SECRET=your_jwt_secret
-   ```
+3. **Create a `.env` file in the root directory**
 
 4. **Run the development server:**
    ```bash
@@ -57,17 +64,15 @@ Once the application is running, navigate to `http://localhost:8080` in your web
 Here are some of the key API endpoints included in this project:
 
 - **User Authentication**
+
   - `POST /api/v1/auth/register` - Register a new user
   - `POST /api/v1/auth/login` - Authenticate a user
 
-- **Bugs**
-  - `GET /api/v1/bugs` - Get all bugs
-  - `POST /api/v1/bugs` - Create a new bug (Authenticated users only)
-  - `GET /api/v1/bugs/:id` - Get a single bug by ID
+- **Question**
 
-- **Comments**
-  - `POST /api/v1/comments` - Create a new comment (Authenticated users only)
-  - `GET /api/v1/comments/bug/:bugId` - Get all comments for a bug
+  - `GET /api/v1/questions` - Get all questions
+  - `POST /api/v1/questions` - Create a new question (Authenticated users only)
+  - `GET /api/v1/questions/:id` - Get a single question by ID
 
 ### Example Request 📝
 
@@ -95,12 +100,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contributors 👥
 
-HUTECH Bugs API is a training project and is developed by contributions from the following members:
-
 <!-- Example contributor table with images and links to GitHub profiles -->
 <table align="center">
   <tr>
-    <td align="center"><a href="https://github.com/qoucname2202"><img src="https://avatars.githubusercontent.com/qoucname2202" width="100px;" alt="Dương Quốc Nam"/><br /><sub><b>Dương Quốc Nam</b></sub></a><br /><a href="https://github.com/yourusername/hutech-bug-api" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/ngcuyen"><img src="https://avatars.githubusercontent.com/ngcuyen" width="100px;" alt="Lê Phạm Ngọc Uyển"/><br /><sub><b>Lê Phạm Ngọc Uyển</b></sub></a><br /><a href="https://github.com/yourusername/hutech-bug-api" title="Code">💻</a></td>
   </tr>
 </table>

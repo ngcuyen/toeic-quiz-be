@@ -5,7 +5,7 @@ interface ExamType {
   title: string
   description: string
   user_id: ObjectId
-  created_at: Date
+  created_at?: Date
   updated_at?: Date
 }
 
@@ -14,7 +14,7 @@ export default class Exam {
   title: string
   description: string
   user_id: ObjectId
-  created_at: Date
+  created_at?: Date
   updated_at?: Date
 
   constructor(item: ExamType) {

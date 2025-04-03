@@ -11,7 +11,10 @@ export const MESSAGES = {
       QUESTION: 'Holds questions.',
       CATEGORY: 'Holds categories.',
       PARAGRAPH: 'Holds paragraphs.',
-      BLANK: 'Holds blanks.'
+      BLANK: 'Holds blanks.',
+      EXAM: 'Holds exams.',
+      EXAM_QUESTION: 'Holds examQuestions.',
+      QUIZ_SESSION: 'Holds quizSessions.'
     }
   },
   AUTH: {
@@ -121,6 +124,22 @@ export const MESSAGES = {
       DELETE: 'Delete blank failed',
       NOT_FOUND: 'Not found blank document'
     },
+    SESSION: {
+      GET_ALL: 'Get all sessions failed',
+      GET_BY_ID: 'Get session by id failed',
+      CREATE: 'Create session failed',
+      UPDATE: 'Update session failed',
+      DELETE: 'Delete session failed',
+      NOT_FOUND: 'Not found session document'
+    },
+    EXAM: {
+      GET_ALL: 'Get all exams failed',
+      GET_BY_ID: 'Get exam by id failed',
+      CREATE: 'Create exam failed',
+      UPDATE: 'Update exam failed',
+      DELETE: 'Delete exam failed',
+      NOT_FOUND: 'Not found exam document'
+    },
     PARAGRAPH: {
       GET_ALL: 'Get all paragraphs failed',
       GET_BY_ID: 'Get paragraph by id failed',
@@ -197,6 +216,20 @@ export const MESSAGES = {
       CREATE: 'Create paragraph successfully',
       DELETE: 'Delete paragraph successfully'
     },
+    EXAM: {
+      GET_ALL: 'Get all exams successfully',
+      GET_BY_ID: 'Get exam by id successfully',
+      UPDATE: 'Update exam successfully',
+      CREATE: 'Create exam successfully',
+      DELETE: 'Delete exam successfully'
+    },
+    EXAM_QUESTION: {
+      GET_ALL: 'Get all exam questions successfully',
+      GET_BY_ID: 'Get exam question by id successfully',
+      UPDATE: 'Update exam question successfully',
+      CREATE: 'Create exam question successfully',
+      DELETE: 'Delete exam question successfully'
+    },
 
     QUESTION: {
       GET_ALL: 'Get all questions successfully',
@@ -205,39 +238,15 @@ export const MESSAGES = {
       CREATE: 'Create question successfully',
       DELETE: 'Delete question successfully'
     },
-    SOLUTION: {
-      GET_ALL: 'Get all solutions successfully',
-      GET_BY_ID: 'Get solution by id successfully',
-      UPDATE: 'Update solution successfully',
-      CREATE: 'Create solution successfully',
-      DELETE: 'Delete solution successfully'
+    SESSION: {
+      GET_ALL: 'Get all sessions successfully',
+      GET_BY_ID: 'Get session by id successfully',
+      UPDATE: 'Update session successfully',
+      CREATE: 'Create session successfully',
+      DELETE: 'Delete session successfully',
+      SUBMIT_TEST: 'Submit test successfully'
     },
 
-    COMMENTS: {
-      CREATE: 'Successfully create comments ',
-      GET_ALL: 'Successfully retrieved all comments by product',
-      GET_BY_ID: 'Successfully get comment by comment_id',
-      INSERT: 'Successfully inserted comment.',
-      UPDATE: 'Successfully updated comment.',
-      DELETE: 'Successfully deleted comment.',
-      REPLIES: 'Replies comment successfully',
-      LIKE: 'Like comment successfully.',
-      UNLIKE: 'Unlike comment successfully.'
-    },
-
-    BLOGS: {
-      GET_ALL: 'Successfully retrieved all blog.',
-      GET_BY_ID: 'Successfully retrieved blog by blog_id.',
-      INSERT: 'Successfully inserted blog.',
-      UPDATE: 'Successfully updated blog.',
-      DELETE: 'Successfully deleted blog.',
-      SEARCH: 'Search blog successfully!',
-      GET_COMMENT: 'Successfully get comment by comment_id',
-      INSERT_COMMENT: 'Successfully inserted comment.',
-      RE_COMMENT: 'Successfully deleted comment.',
-      LIKE: 'Like comment successfully.',
-      UNLIKE: 'Unlike comment successfully.'
-    },
     IMAGE: {
       GET_ALL: 'Successfully retrieved all images.',
       GET_BY_ID: 'Get detail image by image_id',
@@ -245,20 +254,6 @@ export const MESSAGES = {
       DELETE: 'Successfully deleted image',
       UPLOAD_IMAGE: 'Image uploaded successfully.',
       UPLOAD_MUL_IMAGE: 'Multiple images were uploaded successfully.'
-    },
-
-    HAGTAGS: {
-      GET_ALL: 'Successfully retrieved all products in cart.',
-      GET_BY_ID: 'Successfully retrieved hagtags by hagtags_id',
-      INSERT: 'Successfully inserted hagtags.',
-      UPDATE: 'Successfully updated hagtags',
-      DELETE: 'Successfully deleted hagtags',
-      DELETE_ALL: 'Successfully deleted all hagtags'
-    },
-
-    REACTION: {
-      LIKE_SUCCESSFULLY: 'Liked successfully',
-      UNLIKE_SUCCESSFULLY: 'Unliked successfully'
     }
   },
   VALIDATION_MESSAGES: {
@@ -278,6 +273,30 @@ export const MESSAGES = {
         IS_REQUIRED: 'Category name is required.',
         MUST_BE_STRING: 'Category name must be a string.',
         LENGTH_MUST_BE_FROM_3_TO_100: 'Category name length must be between 3 and 100 characters.'
+      }
+    },
+    EXAM: {
+      TITLE: {
+        IS_REQUIRED: 'Exam title is required.',
+        MUST_BE_STRING: 'Exam title must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_200: 'Exam title length must be between 3 and 200 characters.'
+      },
+      DESCRIPTION: {
+        IS_REQUIRED: 'Exam description is required.',
+        MUST_BE_STRING: 'Exam description must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_200: 'Exam description length must be between 3 and 200 characters.'
+      }
+    },
+    EXAM_QUESTION: {
+      EXAM_ID: {
+        IS_REQUIRED: 'Exam ID is required.',
+        MUST_BE_STRING: 'Exam ID must be a string.',
+        VALID_ID: 'Exam ID must be a valid ID.'
+      },
+      QUESTION_ID: {
+        IS_REQUIRED: 'Question ID is required.',
+        MUST_BE_STRING: 'Question ID must be a string.',
+        VALID_ID: 'Question ID must be a valid ID.'
       }
     },
     PARAGRAPH: {
@@ -300,20 +319,6 @@ export const MESSAGES = {
         IS_REQUIRED: 'Correct answer is required.',
         MUST_BE_STRING: 'Correct answer must be a string.'
       }
-    },
-    TAGS: {
-      ID_IS_REQUIRED: 'Tag ID is required.',
-      ID_IS_INVALID: 'The provided Tag ID is invalid.',
-      NOT_FOUND: 'The specified tags do not exist.',
-      NAME_IS_REQUIRED: 'Tag name is required.',
-      NAME_MUST_BE_STRING: 'Tag name must be a string.',
-      NAME_LENGTH_IS_INVALID: 'The length of the tag name must be between 4 to 30 characters.',
-      TYPE_IS_REQUIRED: 'Tag type is required.',
-      TYPE_MUST_BE_STRING: 'Tag type must be a string.',
-      TYPE_LENGTH_IS_INVALID: 'The length of the tag type must be between 4 to 50 characters.',
-      INVALID_TAGS_ID: 'The tags_id is invalid.',
-      INVALID_SORT_ORDER: 'The sorting order is invalid.',
-      FIELD_UPDATE_IS_REQUIRED: 'At least one field must be specified for updating.'
     },
 
     QUESTIONS: {
@@ -443,11 +448,7 @@ export const MESSAGES = {
         DUL_USER_ROLE: 'Updating to the same role is not allowed.',
         USER_EDIT_ROLE_THEMSELVES: 'Users cannot edit their own role.'
       },
-      LIKE: {
-        INVALID_ID: 'Invalid user or product target ID.',
-        NOT_ALREADY_LIKE_PRODUCT: 'User has not liked the product.',
-        ALREADY_LIKE_PRODUCT: 'User has already liked the product.'
-      },
+
       LOGIN: {
         USER_NOT_FOUND: 'User not found',
         EMAIL_IS_REQUIRED: 'Email is required.',
@@ -535,12 +536,6 @@ export const MESSAGES = {
         ADDRESS_MUST_BE_STRING: 'Address must be a string.',
         ADDRESS_LENGTH_IS_INVALID: 'Address length must be between 10 and 200 characters.',
         ADDRESS_INCLUDES_MUL_WHITESPACE: 'Address cannot contain multiple consecutive whitespaces.'
-      },
-      FAVORITE: {
-        FAVORITE_NOT_EXIT: 'Favorite does not exist.',
-        FRIEND_ID_NOT_USER_ID: 'Friend ID is not a user ID.',
-        FRIEND_ID_IS_REQUIRED: 'Friend ID is required.',
-        FRIEND_ID_IS_EXIT: 'Friend ID exists.'
       }
     }
   },
