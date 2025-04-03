@@ -1,4 +1,4 @@
-import e, { Request, Response } from 'express'
+import { Request, Response } from 'express'
 import { ParamsDictionary } from 'express-serve-static-core'
 import { sendResponse } from '~/config/response.config'
 import { MESSAGES } from '~/constants/message'

@@ -5,6 +5,7 @@ import authRouter from './v1/auth.routes'
 import uploadRouter from './v1/uploads.routes'
 import questionRouter from '~/routes/v1/question.routes'
 import categoryRouter from '~/routes/v1/category.routes'
+import paragraphRouter from '~/routes/v1/paragraph.route'
 
 const rootRouter = Router()
 
@@ -14,5 +15,6 @@ rootRouter.use('/v1/images', imageRouter)
 rootRouter.use('/v1/uploads', uploadRouter)
 rootRouter.use('/v1/questions', questionRouter)
 rootRouter.use('/v1/categories', categoryRouter)
+rootRouter.use('/v1/paragraphs', paragraphRouter)
 
 export default rootRouter

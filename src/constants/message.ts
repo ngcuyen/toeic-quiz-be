@@ -112,6 +112,14 @@ export const MESSAGES = {
       DELETE: 'Delete category failed',
       NOT_FOUND: 'Not found category document'
     },
+    PARAGRAPH: {
+      GET_ALL: 'Get all paragraphs failed',
+      GET_BY_ID: 'Get paragraph by id failed',
+      CREATE: 'Create paragraph failed',
+      UPDATE: 'Update paragraph failed',
+      DELETE: 'Delete paragraph failed',
+      NOT_FOUND: 'Not found paragraph document'
+    },
     UPLOAD: {
       IMAGE: 'Upload image failed',
       BUG: 'Upload bug image failed',
@@ -172,6 +180,13 @@ export const MESSAGES = {
       UPDATE: 'Update category successfully',
       CREATE: 'Create category successfully',
       DELETE: 'Delete category successfully'
+    },
+    PARAGRAPH: {
+      GET_ALL: 'Get all paragraphs successfully',
+      GET_BY_ID: 'Get paragraph by id successfully',
+      UPDATE: 'Update paragraph successfully',
+      CREATE: 'Create paragraph successfully',
+      DELETE: 'Delete paragraph successfully'
     },
 
     QUESTION: {
@@ -254,6 +269,13 @@ export const MESSAGES = {
         IS_REQUIRED: 'Category name is required.',
         MUST_BE_STRING: 'Category name must be a string.',
         LENGTH_MUST_BE_FROM_3_TO_100: 'Category name length must be between 3 and 100 characters.'
+      }
+    },
+    PARAGRAPH: {
+      NAME: {
+        IS_REQUIRED: 'Paragraph name is required.',
+        MUST_BE_STRING: 'Paragraph name must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_100: 'Paragraph name length must be between 3 and 100 characters.'
       }
     },
     TAGS: {
