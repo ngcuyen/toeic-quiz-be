@@ -1,6 +1,7 @@
 import { Db, MongoClient, ServerApiVersion, Collection } from 'mongodb'
 import { env } from '~/config/environment.config'
 import { MESSAGES } from '~/constants/message'
+import Blank from '~/models/schemas/Blanks.schema'
 import Category from '~/models/schemas/Categories.schema'
 import OTP from '~/models/schemas/Otps.schema'
 import Paragraph from '~/models/schemas/Paragraphs.schema'
@@ -56,6 +57,9 @@ class DatabaseServices {
   }
   get paragraphs(): Collection<Paragraph> {
     return this.db.collection(env.database.main.collection.paragraphs as string)
+  }
+  get blanks(): Collection<Blank> {
+    return this.db.collection(env.database.main.collection.blanks as string)
   }
 }
 

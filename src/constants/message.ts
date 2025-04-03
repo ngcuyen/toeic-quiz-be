@@ -10,7 +10,8 @@ export const MESSAGES = {
       OTP: 'Holds OTP data.',
       QUESTION: 'Holds questions.',
       CATEGORY: 'Holds categories.',
-      PARAGRAPH: 'Holds paragraphs.'
+      PARAGRAPH: 'Holds paragraphs.',
+      BLANK: 'Holds blanks.'
     }
   },
   AUTH: {
@@ -111,6 +112,14 @@ export const MESSAGES = {
       UPDATE: 'Update category failed',
       DELETE: 'Delete category failed',
       NOT_FOUND: 'Not found category document'
+    },
+    BLANK: {
+      GET_ALL: 'Get all blanks failed',
+      GET_BY_ID: 'Get blank by id failed',
+      CREATE: 'Create blank failed',
+      UPDATE: 'Update blank failed',
+      DELETE: 'Delete blank failed',
+      NOT_FOUND: 'Not found blank document'
     },
     PARAGRAPH: {
       GET_ALL: 'Get all paragraphs failed',
@@ -276,6 +285,20 @@ export const MESSAGES = {
         IS_REQUIRED: 'Paragraph name is required.',
         MUST_BE_STRING: 'Paragraph name must be a string.',
         LENGTH_MUST_BE_FROM_3_TO_100: 'Paragraph name length must be between 3 and 100 characters.'
+      }
+    },
+    BLANK: {
+      BLANK_POSITION: {
+        IS_REQUIRED: 'Blank position is required.',
+        MUST_BE_INTEGER: 'Blank position must be integer.',
+        LENGTH_MUST_BE_FROM_3_TO_100: 'Blank position length must be between 3 and 100 characters.'
+      },
+      PARAGRAPH_ID: {
+        IS_REQUIRED: 'Paragraph ID is required.'
+      },
+      CORRECT_ANSWER: {
+        IS_REQUIRED: 'Correct answer is required.',
+        MUST_BE_STRING: 'Correct answer must be a string.'
       }
     },
     TAGS: {

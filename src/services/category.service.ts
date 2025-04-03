@@ -49,7 +49,6 @@ class CategoryService {
 
   //update a category
   async update(_id: string, payload: CategoryDto): Promise<Category | null> {
-    console.log('🚀 ~ CategoryService ~ update ~ _id:', _id)
     const category = await databaseService.categories.findOne({ _id: new ObjectId(_id) })
     if (!category) {
       throw new ErrorWithStatus({
