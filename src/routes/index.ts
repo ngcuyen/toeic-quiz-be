@@ -7,6 +7,7 @@ import questionRouter from '~/routes/v1/question.routes'
 import categoryRouter from '~/routes/v1/category.routes'
 import paragraphRouter from '~/routes/v1/paragraph.route'
 import blankRouter from '~/routes/v1/blank.routes'
+import examRouter from '~/routes/v1/exam.routes'
 
 const rootRouter = Router()
 
@@ -18,5 +19,6 @@ rootRouter.use('/v1/questions', questionRouter)
 rootRouter.use('/v1/categories', categoryRouter)
 rootRouter.use('/v1/paragraphs', paragraphRouter)
 rootRouter.use('/v1/blanks', blankRouter)
+rootRouter.use('/v1/exams', examRouter)
 
 export default rootRouter
