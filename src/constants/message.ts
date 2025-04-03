@@ -8,13 +8,9 @@ export const MESSAGES = {
       USERS: 'Holds user information.',
       REFRESH_TOKENS: 'Holds refresh-token information.',
       OTP: 'Holds OTP data.',
-      LIKES: 'Holds user likes.',
-      BLOGS: 'Holds blogs.',
-      TAGS: 'Holds tags.',
-      COMMENTS: 'Holds comments.',
-      BOOKMARKS: 'Holds bookmarks',
-      BUGS: 'Hold bugs',
-      SOLUTIONS: 'Hold solutions'
+      QUESTION: 'Holds questions.',
+      CATEGORY: 'Holds categories.',
+      PARAGRAPH: 'Holds paragraphs.'
     }
   },
   AUTH: {
@@ -108,14 +104,13 @@ export const MESSAGES = {
       DELETE: 'Delete question failed',
       NOT_FOUND: 'Not found question document'
     },
-    SOLUTION: {
-      GET_ALL: 'Get all solutions failed',
-      GET_BY_ID: 'Get solution by id failed',
-      CREATE: 'Create solution failed',
-      UPDATE: 'Update solution failed',
-      DELETE: 'Delete solution failed',
-      BUG_ID_NOTFOUND: 'Bug ID not found',
-      NOT_FOUND: 'Not found solution document'
+    CATEGORY: {
+      GET_ALL: 'Get all categories failed',
+      GET_BY_ID: 'Get category by id failed',
+      CREATE: 'Create category failed',
+      UPDATE: 'Update category failed',
+      DELETE: 'Delete category failed',
+      NOT_FOUND: 'Not found category document'
     },
     UPLOAD: {
       IMAGE: 'Upload image failed',
@@ -170,6 +165,13 @@ export const MESSAGES = {
       UPLOAD_THUMBNAIL: 'Thumbnail uploaded successfully.',
       UPLOAD_IMAGE: 'Image uploaded successfully.',
       UPLOAD_MUL_IMAGE: 'Multiple images were uploaded successfully.'
+    },
+    CATEGORY: {
+      GET_ALL: 'Get all categories successfully',
+      GET_BY_ID: 'Get category by id successfully',
+      UPDATE: 'Update category successfully',
+      CREATE: 'Create category successfully',
+      DELETE: 'Delete category successfully'
     },
 
     QUESTION: {
@@ -247,13 +249,12 @@ export const MESSAGES = {
     ID_INVALID: 'Id is unvalid',
     ID_IS_REQUIRED: 'Id is required',
     ID_MUST_BE_STRING: 'Id must be string',
-    INVENTORY: {
-      AMOUNT_IS_INVALID: 'The amount must be greater than or equal to 1.',
-      INVALID_ID: 'The inventory ID is invalid.',
-      NOT_FOUND: 'Inventory not found.',
-      INVALID_PRODUCT_SIZE: 'The specified size does not exist for this product.',
-      ALREADY_EXISTS: 'An inventory item for this product and size already exists.',
-      ID_IS_REQUIRED: 'An inventory ID is required.'
+    CATEGORIES: {
+      NAME: {
+        IS_REQUIRED: 'Category name is required.',
+        MUST_BE_STRING: 'Category name must be a string.',
+        LENGTH_MUST_BE_FROM_3_TO_100: 'Category name length must be between 3 and 100 characters.'
+      }
     },
     TAGS: {
       ID_IS_REQUIRED: 'Tag ID is required.',

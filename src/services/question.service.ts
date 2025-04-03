@@ -8,7 +8,7 @@ import Question from '~/models/schemas/Questions.schema'
 import { databaseService } from '~/services/connectDB.service'
 
 class QuestionService {
-  //create a new homestay
+  //create a new question
   async create(payload: QuestionDto): Promise<Question> {
     const { paragraph_id, category_id } = payload
     const questionData = new Question({
@@ -19,6 +19,7 @@ class QuestionService {
     const newQuestion = await databaseService.questions.findOne({ _id: insertedId })
     return newQuestion
   }
+  //get all questions
   async getAll(page: number, limit: number): Promise<PaginationType<Question> | null> {
     const questions = await databaseService.questions
       .find()
@@ -48,7 +49,7 @@ class QuestionService {
     return question
   }
 
-  //update a homestay
+  //update a question
   async update(_id: string, payload: QuestionDto): Promise<Question | null> {
     const question = await databaseService.questions.findOne({ _id: new ObjectId(_id) })
     if (!question) {
@@ -57,12 +58,19 @@ class QuestionService {
         message: MESSAGES.ERROR_MESSAGES.QUESTION.NOT_FOUND
       })
     }
-    await databaseService.questions.updateOne({ _id: new ObjectId(_id) }, { $set: payload })
+    await databaseService.questions.updateOne(
+      { _id: new ObjectId(_id) },
+      {
+        $set: {
+          ...payload,
+          updated_at: new Date(Date.now())
+        }
+      }
+    )
     const updatedQuestion = await databaseService.questions.findOne({ _id: new ObjectId(_id) })
     return updatedQuestion
   }
-
-  //delete a homestay
+  //delete a question
   async delete(_id: string): Promise<any> {
     const question = await databaseService.questions.findOne({ _id: new ObjectId(_id) })
     if (!question) {

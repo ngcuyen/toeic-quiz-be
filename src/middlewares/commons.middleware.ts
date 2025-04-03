@@ -79,3 +79,12 @@ export const paginationUserValidators = validate(
     ['query']
   )
 )
+
+export const isRequiredAndString = ({ isStringMsg, notEmptyMsg }: { isStringMsg: string; notEmptyMsg: string }) => ({
+  isString: {
+    errorMessage: isStringMsg
+  },
+  notEmpty: {
+    errorMessage: notEmptyMsg
+  }
+})

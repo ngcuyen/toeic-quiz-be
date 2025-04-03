@@ -20,6 +20,9 @@ const envSchema = Joi.object({
   DB_USER_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.USERS),
   DB_REFRESH_TOKEN_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.REFRESH_TOKENS),
   DB_OTP_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.OTP),
+  DB_QUESTION_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.QUESTION),
+  DB_CATEGORY_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.CATEGORY),
+  DB_PARAGRAPH_COLLECTION: Joi.string().required().description(DATABASE.COLLECTIONS.PARAGRAPH),
 
   DATABASE: Joi.string().required().description(DATABASE.USERNAME),
   PASSWORD: Joi.string().required().description(DATABASE.PASSWORD),
@@ -90,7 +93,9 @@ export const env = {
         users: envVars.DB_USER_COLLECTION,
         refresh_tokens: envVars.DB_REFRESH_TOKEN_COLLECTION,
         otps: envVars.DB_OTP_COLLECTION,
-        questions: envVars.DB_QUESTION_COLLECTION
+        questions: envVars.DB_QUESTION_COLLECTION,
+        categories: envVars.DB_CATEGORY_COLLECTION,
+        paragraphs: envVars.DB_PARAGRAPH_COLLECTION
       }
     }
   },

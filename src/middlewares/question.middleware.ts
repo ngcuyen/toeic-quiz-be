@@ -1,27 +1,7 @@
 import { checkSchema } from 'express-validator'
 import { MESSAGES } from '~/constants/message'
+import { isRequiredAndString } from '~/middlewares/commons.middleware'
 import validate, { validateObjectId } from '~/utils/validate'
-
-const isRequiredAndString = ({ isStringMsg, notEmptyMsg }: { isStringMsg: string; notEmptyMsg: string }) => ({
-  isString: {
-    errorMessage: isStringMsg
-  },
-  notEmpty: {
-    errorMessage: notEmptyMsg
-  }
-})
-
-const isValidId = (message: string) => {
-  return {
-    custom: {
-      options: async (value) => {
-        if (validateObjectId(value, message)) {
-          return true
-        }
-      }
-    }
-  }
-}
 
 export const questionValidator = validate(
   checkSchema({
@@ -86,11 +66,5 @@ export const questionValidator = validate(
       isStringMsg: MESSAGES.VALIDATION_MESSAGES.QUESTIONS.ANSWER.MUST_BE_A_STRING,
       notEmptyMsg: MESSAGES.VALIDATION_MESSAGES.QUESTIONS.ANSWER.IS_REQUIRED
     })
-  })
-)
-
-export const checkIdParamValidator = validate(
-  checkSchema({
-    id: isValidId(MESSAGES.VALIDATION_MESSAGES.QUESTIONS.MUST_BE_A_VALID_ID)
   })
 )
