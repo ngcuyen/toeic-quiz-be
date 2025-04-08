@@ -6,7 +6,7 @@ interface QuizSessionType {
   exam_id: ObjectId
   start_time: Date
   end_time?: string
-  score?: number
+  score?: number | string
 }
 
 export default class QuizSession {
@@ -15,7 +15,7 @@ export default class QuizSession {
   exam_id: ObjectId
   start_time: Date
   end_time?: string
-  score?: number
+  score?: number | string
 
   constructor(item: QuizSessionType) {
     this._id = item._id
