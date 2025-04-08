@@ -10,5 +10,6 @@ quizSessionRouter.post('/', quizSessionValidator, wrapRequestHandler(quizSession
 quizSessionRouter.get('/', wrapRequestHandler(quizSessionController.getAll))
 quizSessionRouter.get('/:id', idParamValidator, wrapRequestHandler(quizSessionController.getOne))
 quizSessionRouter.put('/:id', wrapRequestHandler(requireLoginMiddleware), idParamValidator, wrapRequestHandler(quizSessionController.submitTest))
+quizSessionRouter.delete('/:id', wrapRequestHandler(requireLoginMiddleware), idParamValidator, wrapRequestHandler(quizSessionController.submitTest))
 
 export default quizSessionRouter

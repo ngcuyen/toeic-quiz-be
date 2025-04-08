@@ -61,6 +61,17 @@ class QuizSessionService {
     }
     return quizSession
   }
+  //delete a session by id
+  async delete(_id: string): Promise<any> {
+    const quizSession = await databaseService.quizSessions.findOne({ _id: new ObjectId(_id) })
+    if (!quizSession) {
+      throw new ErrorWithStatus({
+        statusCode: StatusCodes.NOT_FOUND,
+        message: MESSAGES.ERROR_MESSAGES.SESSION.NOT_FOUND
+      })
+    }
+    await databaseService.quizSessions.deleteOne({ _id: new ObjectId(_id) })
+  }
 
   //submit test
   async submitTest(_id: string): Promise<QuizSession | null> {
