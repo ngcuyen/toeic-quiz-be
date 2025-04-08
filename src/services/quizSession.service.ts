@@ -2,10 +2,8 @@ import { StatusCodes } from 'http-status-codes'
 import { ObjectId } from 'mongodb'
 import { PaginationType } from '~/@types/pagination.type'
 import { MESSAGES } from '~/constants/message'
-import { BlankDto } from '~/dtos/Blank.dto'
 import { QuizSessionDto } from '~/dtos/QuizSession.dto'
 import { ErrorWithStatus } from '~/models/errors/Errors.schema'
-import Blank from '~/models/schemas/Blanks.schema'
 import QuizSession from '~/models/schemas/QuizSessions.schema'
 import { databaseService } from '~/services/connectDB.service'
 
@@ -34,17 +32,17 @@ class QuizSessionService {
     const newQuizSession = await databaseService.quizSessions.findOne({ _id: insertedId })
     return newQuizSession
   }
-  //get all blanks
-  async getAll(page: number, limit: number): Promise<PaginationType<Blank> | null> {
-    const blanks = await databaseService.blanks
+  //get all quizSessions
+  async getAll(page: number, limit: number): Promise<PaginationType<QuizSession> | null> {
+    const quizSessions = await databaseService.quizSessions
       .find()
       .skip((page - 1) * limit)
       .limit(limit)
       .toArray()
-    const total = await databaseService.blanks.count()
+    const total = await databaseService.quizSessions.count()
     const totalPages = Math.ceil(total / limit)
     return {
-      items: blanks,
+      items: quizSessions,
       page,
       per_page: limit,
       total_pages: totalPages,
@@ -53,15 +51,15 @@ class QuizSessionService {
   }
 
   //get a session by id
-  async getOne(_id: string): Promise<Blank | null> {
-    const blank = await databaseService.blanks.findOne({ _id: new ObjectId(_id) })
-    if (!blank) {
+  async getOne(_id: string): Promise<QuizSession | null> {
+    const quizSession = await databaseService.quizSessions.findOne({ _id: new ObjectId(_id) })
+    if (!quizSession) {
       throw new ErrorWithStatus({
         statusCode: StatusCodes.NOT_FOUND,
-        message: MESSAGES.ERROR_MESSAGES.BLANK.NOT_FOUND
+        message: MESSAGES.ERROR_MESSAGES.SESSION.NOT_FOUND
       })
     }
-    return blank
+    return quizSession
   }
 
   //submit test
@@ -73,9 +71,9 @@ class QuizSessionService {
         message: MESSAGES.ERROR_MESSAGES.SESSION.NOT_FOUND
       })
     }
-    const updatedBlank = await databaseService.quizSessions.findOneAndUpdate({ _id: new ObjectId(_id) }, { $set: { end_time: new Date(Date.now()).toISOString() } }, { returnDocument: 'after' })
-    console.log('🚀 ~ QuizSessionService ~ submitTest ~ updatedBlank:', updatedBlank)
-    return updatedBlank
+    const updatedSession = await databaseService.quizSessions.findOneAndUpdate({ _id: new ObjectId(_id) }, { $set: { end_time: new Date(Date.now()).toISOString() } }, { returnDocument: 'after' })
+
+    return updatedSession
   }
 }
 

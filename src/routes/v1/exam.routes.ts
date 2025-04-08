@@ -18,5 +18,7 @@ examRouter.get('/:id', wrapRequestHandler(requireLoginMiddleware), idParamValida
 examRouter.put('/:id', wrapRequestHandler(requireRoleMiddleware(UserRole.Admin)), idParamValidator, examValidator, wrapRequestHandler(examController.update))
 //delete exam by id by admin
 examRouter.delete('/:id', wrapRequestHandler(requireRoleMiddleware(UserRole.Admin)), idParamValidator, wrapRequestHandler(examController.delete))
+//create random exam by user
+examRouter.post('/random', wrapRequestHandler(requireLoginMiddleware), wrapRequestHandler(examController.createRandomExam))
 
 export default examRouter
