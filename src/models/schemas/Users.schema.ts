@@ -6,6 +6,7 @@ interface UserType {
   _id?: ObjectId
   username: string
   email: string
+  fullname?: string
   password?: string
   role?: UserRole
   gender?: UserGenderType
@@ -26,6 +27,7 @@ export default class User {
   _id?: ObjectId
   username: string
   email: string
+  fullname?: string
   password: string
   role: UserRole
   gender: UserGenderType
@@ -45,6 +47,7 @@ export default class User {
     this._id = user._id
     this.username = user.username
     this.email = user.email
+    this.fullname = user.fullname
     this.password = user.password
     this.gender = user.gender || null
     this.role = user.role || UserRole.User

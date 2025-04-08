@@ -19,3 +19,13 @@ export const quizSessionValidator = validate(
     }
   })
 )
+
+export const submitTestValidator = validate(
+  checkSchema({
+    score: {
+      notEmpty: {
+        errorMessage: MESSAGES.VALIDATION_MESSAGES.SESSION.SCORE.IS_REQUIRED
+      }
+    }
+  })
+)

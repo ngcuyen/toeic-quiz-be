@@ -3,6 +3,7 @@ import { UserGenderType } from '~/constants/enums'
 export interface CreateUserDto {
   username: string
   email: string
+  fullname: string
   password: string
   confirm_password: string
 }

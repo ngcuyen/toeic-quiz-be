@@ -74,7 +74,7 @@ class QuizSessionService {
   }
 
   //submit test
-  async submitTest(_id: string): Promise<QuizSession | null> {
+  async submitTest(_id: string, score: number | string): Promise<QuizSession | null> {
     const session = await databaseService.quizSessions.findOne({ _id: new ObjectId(_id) })
     if (!session) {
       throw new ErrorWithStatus({
@@ -82,7 +82,11 @@ class QuizSessionService {
         message: MESSAGES.ERROR_MESSAGES.SESSION.NOT_FOUND
       })
     }
-    const updatedSession = await databaseService.quizSessions.findOneAndUpdate({ _id: new ObjectId(_id) }, { $set: { end_time: new Date(Date.now()).toISOString() } }, { returnDocument: 'after' })
+    const updatedSession = await databaseService.quizSessions.findOneAndUpdate(
+      { _id: new ObjectId(_id) },
+      { $set: { end_time: new Date(Date.now()).toISOString(), score } },
+      { returnDocument: 'after' }
+    )
 
     return updatedSession
   }
