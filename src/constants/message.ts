@@ -1,3 +1,5 @@
+import { ISO_8601 } from 'moment'
+
 export const MESSAGES = {
   DATABASE: {
     CONNECT_SUCCESS: '🌱 Successfully connected to the database.',
@@ -273,6 +275,11 @@ export const MESSAGES = {
         IS_REQUIRED: 'Category name is required.',
         MUST_BE_STRING: 'Category name must be a string.',
         LENGTH_MUST_BE_FROM_3_TO_100: 'Category name length must be between 3 and 100 characters.'
+      }
+    },
+    SESSION: {
+      SCORE: {
+        IS_REQUIRED: 'Score is required.'
       }
     },
     EXAM: {

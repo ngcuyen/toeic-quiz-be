@@ -29,7 +29,8 @@ const quizSessionController = {
     return sendResponse.success(res, result, MESSAGES.SUCCESS_MESSAGES.SESSION.DELETE)
   },
   submitTest: async (req: Request<ParamsDictionary, any, any>, res: Response) => {
-    const result = await quizSessionService.submitTest(req.params.id)
+    const { score } = req.body
+    const result = await quizSessionService.submitTest(req.params.id, score)
     return sendResponse.success(res, result, MESSAGES.SUCCESS_MESSAGES.SESSION.SUBMIT_TEST)
   }
 }

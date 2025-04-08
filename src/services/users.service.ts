@@ -61,13 +61,14 @@ class UserService {
 
   //create new account
   async register(user: CreateUserDto): Promise<CreateUserResponse> {
-    const { username, email, password } = user
+    const { username, email, password, fullname } = user
     try {
       const hashPwd = bcrypt.hashSync(password, env.password.salt_round)
       const user = new User({
         username,
         email,
-        password: hashPwd
+        password: hashPwd,
+        fullname
       })
       const newUser = await databaseService.users.insertOne(user)
       const userId = newUser.insertedId.toString()
