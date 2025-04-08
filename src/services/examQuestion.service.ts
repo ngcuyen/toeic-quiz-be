@@ -23,10 +23,10 @@ class ExamQuestionService {
     const { question_id, exam_id } = payload
     await this.checkExistingId(question_id.toString(), 'questions', 'QUESTION')
     await this.checkExistingId(exam_id.toString(), 'exams', 'EXAM')
-    const examData = new ExamQuestion(payload)
-    const { insertedId } = await databaseService.examQuestions.insertOne(examData)
-    const newExam = await databaseService.examQuestions.findOne({ _id: insertedId })
-    return newExam
+    const examQuestionData = new ExamQuestion(payload)
+    const { insertedId } = await databaseService.examQuestions.insertOne(examQuestionData)
+    const newExamQuestion = await databaseService.examQuestions.findOne({ _id: insertedId })
+    return newExamQuestion
   }
   //get all exam questions
   async getAll(page: number, limit: number): Promise<PaginationType<ExamQuestion> | null> {

@@ -1,4 +1,4 @@
-import { Db, MongoClient, ServerApiVersion, Collection } from 'mongodb'
+import { Db, MongoClient, ServerApiVersion, Collection, ClientSession } from 'mongodb'
 import { env } from '~/config/environment.config'
 import { MESSAGES } from '~/constants/message'
 import Blank from '~/models/schemas/Blanks.schema'
@@ -25,6 +25,7 @@ class DatabaseServices {
     })
     this.db = this.client.db(env.database.main.name)
   }
+
   async connect() {
     try {
       await this.db.command({ ping: 1 })
@@ -39,6 +40,10 @@ class DatabaseServices {
     } catch (error) {
       console.log(`⛔️ Unable to Connect MongoDB: ${error}`)
     }
+  }
+
+  startSession(): ClientSession {
+    return this.client.startSession()
   }
 
   get users(): Collection<User> {

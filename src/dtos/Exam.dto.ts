@@ -5,3 +5,8 @@ export interface ExamDto {
   description: string
   user_id: ObjectId
 }
+
+export interface CategoryQuota {
+  category_id: ObjectId
+  num_questions: number
+}

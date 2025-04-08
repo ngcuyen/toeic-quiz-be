@@ -30,6 +30,12 @@ const examController = {
   delete: async (req: Request<ParamsDictionary, any, any>, res: Response) => {
     const result = await examService.delete(req.params.id)
     return sendResponse.success(res, result, MESSAGES.SUCCESS_MESSAGES.EXAM.DELETE)
+  },
+  createRandomExam: async (req: Request<ParamsDictionary, any, any>, res: Response) => {
+    const userId = req.user?._id
+    const { title, description } = req.body
+    const result = await examService.createRandomExam(userId, title || 'Bài kiểm tra ngẫu nhiên', description || 'Tạo tự động')
+    return sendResponse.success(res, result, 'Tạo bài kiểm tra ngẫu nhiên thành công')
   }
 }
 
