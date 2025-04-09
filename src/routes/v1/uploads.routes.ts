@@ -5,7 +5,6 @@ import { wrapRequestHandler } from '~/utils/handler'
 
 const uploadRouter = Router()
 
-uploadRouter.post('/bug', uploadMiddleware, wrapRequestHandler(uploadController.bugs))
-uploadRouter.post('/solution', uploadMiddleware, wrapRequestHandler(uploadController.solutions))
+uploadRouter.post('/', uploadMiddleware, wrapRequestHandler(uploadController.upload))
 
 export default uploadRouter
